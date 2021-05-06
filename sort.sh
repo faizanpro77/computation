@@ -16,6 +16,8 @@ echo $result3
 result4=$((a%b+c))
 echo $result4
 
+
+
 echo ""
 
 declare -A dict
@@ -42,6 +44,7 @@ declare -a array
 
 echo ${array[@]}
 
+
 temp=0
 for (( i=0; i<4; i++ ))
 do
@@ -55,4 +58,21 @@ do
         fi
 done
 done
+echo "ascending order=" ${array[@]}
+
+temp=0
+for (( i=0; i<4; i++ ))
+do
+for ((j=i+1; j<4; j++ ))
+do
+        if [ ${array[i]} -gt ${array[j]} ]
+        then
+        temp=${array[i]}
+        array[$i]=${array[j]}
+        array[$j]=$temp
+        fi
+done
+done
+
 echo "descending order=" ${array[@]}
+
