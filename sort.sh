@@ -33,3 +33,11 @@ dict[$result4]=$(( ${dict[$result4]}+(a%b+c) ))
 
 echo ${dict[@]}
 
+declare -a array
+        array[0]=${dict[$result1]}
+        array[1]=${dict[$result2]}
+        array[2]=${dict[$result3]}
+        array[3]=${dict[$result4]}
+
+echo ${array[@]}
+
